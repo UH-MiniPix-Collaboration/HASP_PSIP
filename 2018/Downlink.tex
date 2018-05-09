@@ -1,4 +1,56 @@
+\newpage
 \section{Downlink Telemetry Specifications}
 \label{sec:Downlink}
 
-Specify.
+\hspace*{0.5cm}
+\begin{minipage}{\linewidth-0.5cm}
+  \begin{enumerate}[label=\Alph*.]
+    
+  \item Serial data downlink format: \textbf{Packetized}
+    
+  \item Approximate serial downlink rate (in bits per second) \num{160}bps.
+    
+  \item Specify your serial data record including record length and information contained in each record byte (seen in Table \ref{tab:SerialRecord}).
+
+  \item No analog channels needed.
+
+  \item Number of discrete lines used: \newline
+        4 lines. Pins F, N H, and P.
+
+  \item If discrete lines are being used what are they being used for? \newline
+        Power on pump 1 (F), shut down pump 1 (N), power on pump 2(H), shut down pump 2 (P).
+        
+  \item No on-board transmitters.
+
+  \item Other relevant downlink telemetry information? \newline
+        We are only using the lines provided by HASP. There is no additional communication with the payload.
+    
+  \end{enumerate}
+\end{minipage}
+
+\begin{table}[h] 
+  \caption{}
+  \label{tab:SerialRecord}
+  \begin{tabularx}{0.8\linewidth}{Y Y}
+    \hline
+    \hline
+    \multicolumn{1}{c}{Description} &
+    \multicolumn{1}{c}{Bytes} \\
+    \hline
+    Start of Frame (SOF) & 0-3   \\
+    Control Byte         & 4     \\
+    Data Length          & 5     \\
+    MiniPIX Temperature  & 6-9   \\
+    RPI Temperature      & 10-13 \\
+    Frame Counts         & 14-17 \\
+    Frame Dose Rate      & 18-21 \\
+    Frame Count          & 22-25 \\
+    Device ID            & 26-29 \\
+    Unix Timestamp       & 30-33 \\
+    Error Flags          & 34-35 \\
+    Checksum             & 36-39 \\
+    End of Frame (EOF)   & 40    \\
+    \textbf{Total:}      & 40    \\
+    \hline
+  \end{tabularx}
+\end{table}
