@@ -1,2 +1,2 @@
-# HASP_PSIP
+# PSIP
 Payload Specification and Integration Plan
