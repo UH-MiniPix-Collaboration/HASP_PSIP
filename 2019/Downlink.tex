@@ -1,0 +1,45 @@
+\newpage
+\section{Downlink Telemetry Specifications}
+\label{sec:Downlink}
+
+\hspace*{0.5cm}
+\begin{minipage}{\linewidth-0.5cm}
+  \begin{enumerate}[label=\Alph*.]    
+  \item Serial data downlink format: \textbf{Packetized}
+  \item Approximate serial downlink rate (in bits per second) is \SI{500}{\bit\per\second}.
+  \item Specify your serial data record including record length and information contained in each record byte. This can be seen in Table \ref{tab:SerialRecord}.
+  \item No analog channels needed.
+  \item Number of discrete lines used: \newline
+        4 lines. Pins F, N, H, and P.
+  \item If discrete lines are being used what are they being used for? \newline
+        F - activate astrobiology system, N - deactivate astrobiology system, H - power on SOCRATES, P - power down SOCRATES.
+  \item No on-board transmitters.
+  \item Other relevant downlink telemetry information? \newline
+        This concludes our payload's downlink communication.
+  \end{enumerate}
+\end{minipage}
+
+\begin{table}[h] 
+  \caption{Serial record for the SORA 3 payload.}
+  \label{tab:SerialRecord}
+  \begin{tabularx}{0.8\linewidth}{Y Y}
+    \hline
+    \hline
+    \multicolumn{1}{c}{Description} & \multicolumn{1}{c}{Byte Number} \\
+    \hline
+    start\_packet & 0 \\
+    RPI Temp & 1 - 4 \\
+    MiniPIX-0 Temp & 5 - 8 \\
+    MiniPIX-1 Temp & 9 - 12 \\
+    ISS Temp &  13 - 16 \\
+    ISS Pressure & 17 - 20 \\
+    Ambient Pressure & 21 - 24 \\
+    Solar cells w/ accessories & 24 - 120 \\
+    Timestamp & 121 - 124 \\
+    end\_packet & 125 \\
+    \hline
+    \textbf{Total} & \textbf{125} \\
+    \hline
+    \hline
+  \end{tabularx}
+\end{table}

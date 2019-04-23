@@ -1,0 +1,34 @@
+\newpage
+\section{Uplink Commanding Specifications}
+\label{sec:Uplink}
+
+\hspace*{0.5cm}
+\begin{minipage}{\linewidth-0.5cm}
+  \begin{enumerate}[label=\Alph*.]    
+  \item Command uplink capability required: Yes
+  \item If so, will commands be uplinked in regular intervals: Yes
+  \item How many commands do you expect to uplink during the flight (can be an absolute number or a rate, i.e. n commands per hour): Ideally, we will send no commands the entire flight. If we need to send commands, we will likely send a maximum of \num{4} throughout the entire flight.
+  \item Provide a table of all of the commands that you will be uplinking to your payload: See Table \ref{tab:UplinkRecord}
+  \item Are there any on-board receivers?  No on-board transmitters.
+  \item Other relevant uplink commanding information.
+  \end{enumerate}
+\end{minipage}
+
+\begin{table}[h] 
+  \caption{}
+  \label{tab:UplinkRecord}
+  \begin{tabularx}{0.8\linewidth}{Y Y Y}
+    \hline
+    \hline
+    \multicolumn{1}{c}{Command} &
+    \multicolumn{1}{c}{Command Byte \num{1}} &
+    \multicolumn{1}{c}{Command Byte \num{2}} \\
+    \hline
+    Activate astrobiology system & 0x01 & Not used  \\
+    Deactivate astrobiology system & 0x02 & Not used  \\
+    Power up SOCRATES & 0x03 & Not used \\
+    Power down SOCRATES & 0x04 & Not used \\
+    \hline
+  \end{tabularx}
+\end{table}
+\vfill
