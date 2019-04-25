@@ -1,4 +1,4 @@
-\newpage
+
 \section{Downlink Telemetry Specifications}
 \label{sec:Downlink}
 
@@ -7,16 +7,18 @@
   \begin{enumerate}[label=\Alph*.]    
   \item Serial data downlink format: \newline
     \textbf{Packetized}
-  \item Approximate serial downlink rate (in bits per second) is \newline
+  \item Approximate serial downlink rate (in bits per second) \newline
     \SI{500}{\bit\per\second}.
   \item Specify your serial data record including record length and information contained in each record byte. \newline
     This can be seen in Table \ref{tab:SerialRecord}.
-  \item No analog channels will be used.
-  \item Number of discrete lines used: \newline
+  \item Number of analog channels being used:
+    No analog channels will be used.
+  \item If analog channels are being used, what are they being used for?
+  \item Number of discrete lines used: \newline   
     4 lines. Pins F, N, H, and P.
   \item If discrete lines are being used what are they being used for? \newline
     F - activate astrobiology system, N - deactivate astrobiology system, H - power on SOCRATES, P - power down SOCRATES.
-  \item Are there any on-board transmitters? \newline
+  \item Are there any on-board transmitters? If so, list the frequencies being used and the transmitted power. \newline
     No on-board transmitters.
   \item Other relevant downlink telemetry information? \newline
     None.
