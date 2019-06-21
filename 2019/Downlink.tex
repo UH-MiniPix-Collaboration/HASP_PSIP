@@ -17,11 +17,17 @@
   \item Number of discrete lines used: \newline   
     4 lines. Pins F, N, H, and P.
   \item If discrete lines are being used what are they being used for? \newline
-    F - activate astrobiology system, N - deactivate astrobiology system, H - power on SOCRATES, P - power down SOCRATES.
+    F - activate astrobiology system, N - deactivate astrobiology system, H - Reboot SOCRATES.
   \item Are there any on-board transmitters? If so, list the frequencies being used and the transmitted power. \newline
     No on-board transmitters.
   \item Other relevant downlink telemetry information? \newline
-    None.
+    The following is a sample data packet:
+    
+    1,44.3,51.1,2.12,3.11,53.6,5.22,2.32,0.02,1.01,27.3,9.21,5.33,4.65,7.35,
+    
+    7.24,5.73,9.35,3.25,7.31,5.42,4.21,7.25,221.1,375.5,311.2,11:03:43,06/05/19
+    
+    Each packet will be continuous with no breaks in the middle. Each packet will be broken by a newline character.
   \end{enumerate}
 \end{minipage}
 
@@ -33,18 +39,23 @@
     \hline
     \multicolumn{1}{c}{Description} & \multicolumn{1}{c}{Byte Number} \\
     \hline
-    start\_packet & 0 \\
+    packet\_num & 0 \\
     RPI Temp & 1 - 4 \\
     MiniPIX-0 Temp & 5 - 8 \\
-    MiniPIX-1 Temp & 9 - 12 \\
-    ISS Temp &  13 - 16 \\
-    ISS Pressure & 17 - 20 \\
-    Ambient Pressure & 21 - 24 \\
-    Solar cells w/ accessories & 24 - 120 \\
-    Timestamp & 121 - 124 \\
-    end\_packet & 125 \\
+    MiniPIX-0 Dose & 9 - 12 \\
+    MiniPIX-0 Counts & 13 - 16 \\
+    MiniPIX-1 Temp & 17 - 20 \\
+    MiniPIX-1 Dose & 21 - 24 \\
+    MiniPIX-1 Counts & 25 - 28 \\
+    Ambient Pressure & 29 - 32 \\
+    ISS Pressure & 33 - 36 \\
+    ISS Temp & 37 - 40 \\
+    Solar Cell Temps & 41 - 88 \\
+    Photodiodes & 89 - 100 \\
+    Timestamp & 101 - 116 \\
+    end\_packet & 117 \\
     \hline
-    \textbf{Total} & \textbf{125} \\
+    \textbf{Total} & \textbf{118} \\
     \hline
     \hline
   \end{tabularx}
